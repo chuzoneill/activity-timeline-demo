@@ -1,0 +1,34 @@
+<aura:component >
+    
+    
+    <aura:attribute name="itemDetail" type="ActivityTimeline_Model"/>
+    
+	<li class="slds-timeline__item">
+    <span class="slds-assistive-text">Call</span>
+    <div class="slds-media">
+      <div class="slds-media__body">
+        <div class="slds-media slds-media--timeline slds-timeline__media--call">
+          <div class="slds-media__figure">
+                                         <c:svg class="slds-icon slds-icon-standard-log-a-call slds-timeline__icon" xlinkHref="/resource/SLDS0120/assets/icons/standard-sprite/svg/symbols.svg#log_a_call">
+    </c:svg>
+          </div>
+          <div class="slds-media__body">
+            <p><a href="#">{!v.itemDetail.Subject}</a></p>
+            <p class="slds-truncate">{!v.itemDetail.Detail}</p>
+            <ul class="slds-list--horizontal slds-text-body--small">
+              <li class="slds-list__item slds-m-right--large">
+                <span>Name:</span>
+                <span class="slds-m-left--xx-small"><a href="#">{!v.itemDetail.Recipients}</a></span>
+              </li>
+              <li class="slds-list__item">
+                <span>Assigned to:</span>
+                <span class="slds-m-left--xx-small"><a href="#">{!v.itemDetail.Assigned}</a></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+ 		<c:ActivityTimeLine_Item_DropDown shortDate="{!v.itemDetail.ShortDate}"/>
+    </div>
+  </li>
+</aura:component>

@@ -1,0 +1,21 @@
+<aura:component controller="ActivityTimeline_Controller">
+    
+    <!-- Handler for Record Update --> 
+    <aura:handler event="c:updateRecordEvent" action="{!c.updateRecord}"/>
+    
+    <!-- List of Activity Timeline Items -->
+    <aura:attribute name="timeLineItems" type="ActivityTimeline_Model"/>
+    
+
+	<ul class="timeline">
+      
+        <aura:iteration items="{!v.timeLineItems}" var="item">
+        	<div>
+                <c:ActivityTimeLine_Item activityType="{!item.ActivityTimelineType}" itemDetail="{!item}"/>		
+    		</div>
+        </aura:iteration>
+         
+	</ul>
+      
+
+</aura:component>

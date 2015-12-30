@@ -1,0 +1,41 @@
+<aura:component >
+    
+    <aura:attribute name="shortDate" type="string"/>
+    
+    <div class="slds-media__figure slds-media__figure--reverse">
+        <div class="slds-timeline__actions">
+          <p class="slds-timeline__date">{!v.shortDate}</p>
+            
+            
+          <div class="slds-dropdown-trigger">  
+          <button class="slds-button slds-button--icon-border-filled"><c:svg class="slds-button__icon" xlinkHref="/resource/SLDS0120/assets/icons/utility-sprite/svg/symbols.svg#switch">
+    			</c:svg>
+            <span class="slds-assistive-text">Switch</span>
+          </button>
+              
+             <div class="slds-dropdown slds-dropdown--right slds-nubbin--top-right slds-dropdown--menu">
+    <ul class="slds-dropdown__list" role="menu">
+      <li id="menu-0-0" class="slds-dropdown__item">
+        <a href="javascript:void(0)" role="menuitem">
+          <p class="slds-truncate">Edit</p>
+        </a>
+      </li>
+      <li id="menu-1-1" class="slds-dropdown__item">
+        <a href="javascript:void(0)" role="menuitem">
+          <p class="slds-truncate">Delete</p>
+        </a>
+      </li>
+     
+    </ul>
+  </div>
+              
+              
+              
+              
+              
+            </div>    
+              
+        </div>
+      </div>
+	
+</aura:component>

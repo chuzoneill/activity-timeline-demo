@@ -1,0 +1,29 @@
+<aura:component >
+    
+    <!-- Type of Activity Item --> 
+	<aura:attribute name="activityType" type="String" default="Task"/>
+    
+    <aura:attribute name="itemDetail" type="ActivityTimeline_Model"/>
+    
+    	<!-- Routes to the correct Activity Item Component -->
+        <aura:if isTrue="{!v.activityType == 'Task'}">
+            <c:ActivityTimeLine_Item_Task itemDetail="{!v.itemDetail}" />
+        </aura:if>
+        
+        <aura:if isTrue="{!v.activityType == 'Email'}">
+            <c:ActivityTimeLine_Item_Email itemDetail="{!v.itemDetail}" />    
+        </aura:if>
+        
+        <aura:if isTrue="{!v.activityType == 'Call'}">
+            <c:ActivityTimeLine_Item_Call itemDetail="{!v.itemDetail}" />    
+        </aura:if>
+
+        <aura:if isTrue="{!v.activityType == 'Meeting'}">
+            <c:ActivityTimeLine_Item_Event itemDetail="{!v.itemDetail}" />    
+        </aura:if>
+    
+        <aura:if isTrue="{!v.activityType == 'Event'}">
+            <c:ActivityTimeLine_Item_Event />    
+        </aura:if>
+
+</aura:component>

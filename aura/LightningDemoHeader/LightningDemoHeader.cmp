@@ -1,0 +1,27 @@
+<aura:component >
+    
+    <!-- register that this component will fire an event --> 
+    ￼<aura:registerEvent name="updateSampleRecordEvent" type="c:updateRecordEvent"/>
+    
+    <!-- attribute to store the record Id -->
+    <aura:attribute name="recordId" type="string"/>
+
+    <!-- standard page markup -->
+    <div class="slds-page-header" role="banner">
+            
+        <p class="slds-text-heading--label">CHARLES O'NEILL</p>
+        <div class="slds-text-heading--large">Timeline Demo Application</div>
+            
+        <div class="slds-form--inline">
+            
+            <div class="slds-form-element__control">
+                <ui:inputText value="{!v.recordId}" class="slds-input" placeholder="Enter Record Id" />
+            </div>
+            
+            <!-- click event for record Id update -->
+            <a href="#" onclick="{!c.updateSampleRecord}" class="btn btn-primary update">Update</a>
+        </div>
+        
+    </div>
+    
+</aura:component>

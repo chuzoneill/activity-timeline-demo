@@ -1,0 +1,90 @@
+<aura:component >
+    
+    <aura:attribute name="itemDetail" type="ActivityTimeline_Model"/>
+    
+    <!-- Here's an item -->
+     <li class="slds-timeline__item">       
+         <!-- Text Describing the item (hidden) -->
+         <span class="slds-assistive-text">Task</span>
+         
+         <!-- Wrapper for the item visualisation -->
+         <div class="slds-media">
+             
+             <div class="slds-media__body">
+                 
+                 <!-- Applies the left hand side line and the padding below -->
+                 <div class="slds-media slds-media--timeline slds-timeline__media--task">
+                     
+                     <!-- Container for the SVG Icon -->
+                     <div class="slds-media__figure">                     
+                         <c:svg class="slds-icon slds-icon-standard-task slds-timeline__icon" xlinkHref="/resource/SLDS0120/assets/icons/standard-sprite/svg/symbols.svg#task"/>
+                     </div>
+                     
+                     <!-- main body -->
+                     <div class="slds-media__body">
+                          
+                         	
+ 							<div class="slds-media slds-tile slds-media--small">                                   
+                            
+                                <!-- Mark as Complete -->
+                                <div class="slds-media__figure">
+                				<ui:inputCheckbox value="{!v.check}"/>
+              					</div>
+                         	
+                         		<!-- Header Text -->
+                         		<div class="slds-media__body">                				
+                                
+                                    <p class="slds-tile__title slds-truncate">
+                                        <a href="#">{!v.itemDetail.Subject}</a>
+                                    </p>
+                                    <p class="slds-truncate">{!v.itemDetail.Detail}</p>
+                                    
+                                    
+                                    <!-- Detail List --> 
+                                    <ul class="slds-tile__detail slds-list--horizontal slds-text-body--small">
+                                        
+                                        <!-- Related to:  --> 
+                                        <li class="slds-list__item slds-m-right--large">
+                                            <span>Contact:</span>
+                                            <span class="slds-m-left--xx-small">
+                                                <a href="#">{!v.itemDetail.Recipients}</a>
+                                            </span>
+                                        </li>
+                      
+                                        <!-- Assigned to: -->
+                                        <li class="slds-list__item">
+                                            <span>Assigned to:</span>
+                                            <span class="slds-m-left--xx-small">
+                                                <a href="#">{!v.itemDetail.Assigned}</a>
+                                            </span>
+                                        </li>
+                                    
+                                    </ul>
+                                </div>
+                 
+                         </div>
+                          
+                          
+                          
+                     </div>
+                     
+                 </div>
+                 
+                 
+             </div>
+         
+             
+         
+         
+         
+        
+         
+         <!-- switch area -->
+ 			<c:ActivityTimeLine_Item_DropDown shortDate="{!v.itemDetail.ShortDate}"/>
+         
+         </div>
+
+    </li>
+	
+	
+</aura:component>

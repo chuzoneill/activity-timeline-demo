@@ -1,0 +1,32 @@
+<aura:component >
+    
+    <!-- Record Id for Record View -->
+    <aura:attribute name="recordId" default="init" type="string"/>
+    
+    <!-- Handler for Record Update --> 
+    <aura:handler event="c:updateRecordEvent" action="{!c.updateRecord}"/>
+    
+    <div class="slds-page-header" role="banner">
+        
+        <!-- on the intial load out -->
+        <aura:if isTrue="{!v.recordId == 'init'}">      
+            
+            <!-- show no record selected -->
+            <div class="slds-card slds-card--empty">
+  					<div class="slds-card__body slds-p-horizontal--small">
+   	 					<h3 class="slds-text-heading--small slds-p-top--large slds-p-bottom--large">
+                            No Record Selected</h3>
+   					</div>
+            </div>
+           
+            <!-- otherwise show the record -->
+            <aura:set attribute="else">
+ 				<p class="slds-text-heading--label">EXAMPLE RECORD</p>
+            	<force:recordView recordId="{!v.recordId}" type="MINI"></force:recordView>            
+            </aura:set>
+            
+        </aura:if>
+                
+    </div>
+	
+</aura:component>

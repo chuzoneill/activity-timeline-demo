@@ -1,0 +1,53 @@
+<aura:component >
+    
+    <aura:attribute name="itemDetail" type="ActivityTimeline_Model"/>
+    
+    <li class="slds-timeline__item">
+    <span class="slds-assistive-text">Event</span>
+    <div class="slds-media">
+      <div class="slds-media__body">
+        <div class="slds-media slds-media--timeline slds-timeline__media--event">
+          <div class="slds-media__figure">
+          		<c:svg class="slds-icon slds-icon-standard-event slds-timeline__icon" xlinkHref="/resource/SLDS0120/assets/icons/standard-sprite/svg/symbols.svg#event">
+    			</c:svg>
+          </div>
+            
+          <div class="slds-media__body">
+            <p><a href="#">{!v.itemDetail.Subject}</a></p>
+            <p class="slds-truncate">{!v.itemDetail.Detail}</p>
+              
+              <!-- Only input this info for events. Meetings not required -->
+              <aura:if isTrue="{!v.itemDetail.ActivityTimelineType == 'Event'}">
+              
+           			<ul class="slds-list--horizontal slds-text-body--small">
+              		<li class="slds-list__item slds-m-right--large">
+                
+
+                    <span>Time:</span>
+                    <span class="slds-m-left--xx-small"><a href="#">Feb 23, 2015 11:00am–12:00pm</a></span>
+                      
+                      
+                      
+                      
+                  </li>
+                  <li class="slds-list__item">
+                    <span>Location:</span>
+                    <span class="slds-m-left--xx-small"><a href="#">300 Pike St, San Francisco CA</a></span>
+                  </li>
+                  
+            		</ul>
+              </aura:if>
+              
+            <span class="slds-text-body--small">
+              <span>Name:</span>
+              <span class="slds-m-left--xx-small"><a href="#">{!v.itemDetail.Recipients}</a></span>
+            </span>
+          </div>
+        </div>
+      </div>     
+        
+        <c:ActivityTimeLine_Item_DropDown shortDate="{!v.itemDetail.ShortDate}"/>
+    </div>
+  </li>
+	
+</aura:component>
